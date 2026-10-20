@@ -180,3 +180,5 @@ Não envie sua configuração pessoal para o repositório. Ela pode conter núme
 ## Licença e créditos
 
 Distribuído sob a [licença MIT](LICENSE), preservando os avisos de autoria originais. Ferramenta complementar ao [Clover Bootloader](https://github.com/CloverHackyColor/CloverBootloader).
+
+Thanks to: https://github.com/chris1111 @chris1111 
