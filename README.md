@@ -2,7 +2,7 @@
 
 Aplicativo macOS em SwiftUI para verificar configurações do Clover EFI. Arraste um arquivo `.plist` para a janela e consulte os erros, avisos e seções verificadas.
 
-![Ícone do aplicativo](macOS/Resources/AppIcon.png)
+<img src="macOS/Resources/AppIcon.png" alt="Ícone do aplicativo" width="320" height="320">
 
 O aplicativo **apenas lê o arquivo**: não modifica a configuração, não monta a EFI e não instala nada no sistema.
 
