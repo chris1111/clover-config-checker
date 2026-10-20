@@ -1,5 +1,7 @@
 # Clover Config Checker
 
+Credits: @chris1111 
+
 Aplicativo macOS em SwiftUI para verificar configurações do Clover EFI. Arraste um arquivo `.plist` para a janela e consulte os erros, avisos e seções verificadas.
 
 <img src="macOS/Resources/AppIcon.png" alt="Ícone do aplicativo" width="320" height="320">
