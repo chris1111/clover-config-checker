@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.egg-info/
+build/
+.venv/
+venv/
+.env
+.env.*
+config.plist
+dist/*
+!dist/Clover-Config-Checker-macOS.zip

@@ -1,0 +1,59 @@
+name: CloverConfigChecker CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  check-samples:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        python-version: ['3.8', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install
+        run: pip install .
+
+      - name: Validate official Clover sample config
+        run: clover-config-checker samples/clover-official-sample.plist
+
+      - name: Validate known-good config
+        run: clover-config-checker samples/config-valid.plist
+
+      - name: Expect failure on typo config
+        shell: bash
+        run: |
+          if clover-config-checker samples/config-bad-typo.plist; then
+            echo "ERROR: typo config should have failed"; exit 1
+          else
+            echo "OK: typo config rejected as expected"
+          fi
+
+      - name: Expect failure on bad-type config
+        shell: bash
+        run: |
+          if clover-config-checker samples/config-bad-types.plist; then
+            echo "ERROR: bad-type config should have failed"; exit 1
+          else
+            echo "OK: bad-type config rejected as expected"
+          fi
+
+      - name: Validate your real config (optional)
+        # Drop your EFI/CLOVER/config.plist at repo root as config.plist
+        run: |
+          if [ -f config.plist ]; then
+            clover-config-checker config.plist
+          else
+            echo "No user config.plist found, skipping"
+          fi
+        shell: bash
