@@ -1,6 +1,6 @@
 # Clover Config Checker
 
-Credits: [chris1111](https://github.com/chris1111)
+Credits: [chris1111](https://github.com/chris1111/CloverConfigChecker)
 
 Aplicativo macOS em SwiftUI para verificar configurações do Clover EFI. Arraste um arquivo `.plist` para a janela e consulte os erros, avisos e seções verificadas.
 
